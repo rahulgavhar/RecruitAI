@@ -1,0 +1,220 @@
+.jobs-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.jobs-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.list-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.job-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.job-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.job-item.active {
+  background: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid #8b5cf6;
+}
+
+.job-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.job-icon.primary {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+}
+
+.job-details h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.job-details p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.job-status {
+  margin-left: auto;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.green { background: #10b981; box-shadow: 0 0 5px #10b981; }
+.status-dot.gray { background: #6b7280; }
+
+.framework-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-header {
+  padding: 32px;
+  border-bottom: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, transparent 100%);
+}
+
+.detail-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.detail-body {
+  padding: 32px;
+}
+
+.req-section {
+  margin-bottom: 32px;
+}
+
+.req-section:last-child {
+  margin-bottom: 0;
+}
+
+.req-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #e5e7eb;
+}
+
+.description-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+}
+
+.attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.attribute-card {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.attr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.attr-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.attr-type {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.attr-type.must { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.3); }
+.attr-type.good { background: rgba(56, 189, 248, 0.2); color: #bae6fd; border: 1px solid rgba(56, 189, 248, 0.3); }
+.attr-type.optional { background: rgba(255, 255, 255, 0.1); color: #e5e7eb; border: 1px solid rgba(255, 255, 255, 0.2); }
+
+.attr-weight {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weight-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.monitor-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.monitor-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
