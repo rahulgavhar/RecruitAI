@@ -40,7 +40,7 @@
 }
 
 .settings-tab.active {
-  color: #fff;
+  color: #000;
   background: rgba(139, 92, 246, 0.15);
   box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.3);
 }

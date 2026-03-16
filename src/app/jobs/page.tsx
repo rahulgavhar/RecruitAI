@@ -29,7 +29,7 @@ export default function JobFrameworksPage() {
           // Optional: revert back to idle after some time
           setTimeout(() => {
             setAnalyzeState('idle');
-          }, 3000);
+          }, 30000);
           
         }, 3000);
       }, 3000);
