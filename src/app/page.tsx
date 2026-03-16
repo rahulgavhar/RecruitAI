@@ -47,8 +47,8 @@ export default function Dashboard() {
             <Activity className="metric-icon" style={{ color: '#8b5cf6' }} size={24} />
           </div>
           <div className="metric-content">
-            <h3>Pending Review</h3>
-            <p className="metric-val">{pipelineMetrics.pendingReview}</p>
+            <h3>Rejected</h3>
+            <p className="metric-val">{pipelineMetrics.rejected}</p>
           </div>
         </div>
 
@@ -57,7 +57,7 @@ export default function Dashboard() {
             <AlertTriangle className="metric-icon" style={{ color: '#f59e0b' }} size={24} />
           </div>
           <div className="metric-content">
-            <h3>Bias Alerts</h3>
+            <h3>Duplicates Detected</h3>
             <p className="metric-val text-warning">{pipelineMetrics.biasAlerts}</p>
           </div>
         </div>

@@ -37,7 +37,6 @@ export default function CandidateProfile({ params }: { params: Promise<{ id: str
                 <h2>{candidate.name}</h2>
                 <p className="role-title">{candidate.role}</p>
                 {candidate.status === 'shortlisted' && <span className="status-pill success">Shortlisted</span>}
-                {candidate.status === 'pending' && <span className="status-pill warning">Pending</span>}
                 {candidate.status === 'rejected' && <span className="status-pill danger">Rejected</span>}
               </div>
             </div>
@@ -130,7 +129,7 @@ export default function CandidateProfile({ params }: { params: Promise<{ id: str
             </div>
             
             <div className="requirements-check">
-              <h3 className="sub-heading">Job Framework Alignment</h3>
+              <h3 className="sub-heading">Job Description Alignment</h3>
               <ul className="req-list">
                 {mockJobDescription.requirements.map(req => {
                   const hasSkill = candidate.skills.some(s => s.name === req.skill || s.name.includes(req.skill.split(' ')[0]));

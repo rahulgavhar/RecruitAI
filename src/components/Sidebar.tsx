@@ -3,15 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Users, FileText, Settings, ShieldAlert, Workflow } from 'lucide-react';
+import { LayoutDashboard, Users, FileText, Settings, ShieldAlert, Workflow, Database } from 'lucide-react';
 import './Sidebar.css';
 
 const navItems = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/agents', label: 'AI Agents Graph', icon: Workflow },
   { href: '/pipeline', label: 'Candidate Pipeline', icon: Users },
-  { href: '/jobs', label: 'Job Frameworks', icon: FileText },
-  { href: '/bias-audits', label: 'Bias Audits', icon: ShieldAlert },
-  { href: '/agent-logs', label: 'Agent Logs', icon: Workflow },
+  { href: '/resume-repository', label: 'Resume Repository', icon: Database },
+  { href: '/jobs', label: 'Job Descriptions', icon: FileText },
   { href: '/settings', label: 'Settings', icon: Settings },
 ];
 

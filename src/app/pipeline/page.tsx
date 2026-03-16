@@ -22,9 +22,24 @@ export default function PipelinePage() {
         </div>
         
         <div className="header-actions">
-          <div className="role-selector glass-panel">
-            <span>Senior AI Engineer</span>
-            <ChevronDown size={16} />
+          <div className="role-selector glass-panel" style={{ padding: '0', overflow: 'hidden' }}>
+            <select 
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: 'inherit',
+                padding: '8px 32px 8px 16px',
+                appearance: 'none',
+                outline: 'none',
+                cursor: 'pointer',
+                width: '100%',
+                fontWeight: 600
+              }}
+            >
+              <option value="ai-engineer">Senior AI Engineer</option>
+              <option value="data-scientist">Data Scientist</option>
+            </select>
+            <ChevronDown size={16} style={{ position: 'absolute', right: '12px', pointerEvents: 'none' }} />
           </div>
           <button className="btn-secondary">
             <Filter size={18} />
@@ -45,12 +60,6 @@ export default function PipelinePage() {
           onClick={() => setActiveTab('shortlisted')}
         >
           Shortlisted
-        </button>
-        <button 
-          className={`tab-btn ${activeTab === 'pending' ? 'active' : ''}`}
-          onClick={() => setActiveTab('pending')}
-        >
-          Pending Review
         </button>
         <button 
           className={`tab-btn ${activeTab === 'rejected' ? 'active' : ''}`}
@@ -92,9 +101,6 @@ export default function PipelinePage() {
                 <td className="col-status">
                   {candidate.status === 'shortlisted' && (
                     <span className="status-badge success"><CheckCircle size={14} /> Shortlisted</span>
-                  )}
-                  {candidate.status === 'pending' && (
-                    <span className="status-badge warning"><Clock size={14} /> Pending</span>
                   )}
                   {candidate.status === 'rejected' && (
                     <span className="status-badge danger"><XCircle size={14} /> Rejected</span>

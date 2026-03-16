@@ -7,8 +7,12 @@
   height: 70px;
   border-bottom: 1px solid var(--glass-border);
   padding: 0 32px;
-  background: rgba(5, 5, 10, 0.3);
+  background: var(--nav-bg, rgba(5, 5, 10, 0.3));
   backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] {
+  --nav-bg: rgba(255, 255, 255, 0.85);
 }
 
 .search-bar {

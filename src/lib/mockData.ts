@@ -21,7 +21,7 @@ export interface Candidate {
   biasFlag?: boolean;
   biasReason?: string;
   counterfactual?: string;
-  status: 'pending' | 'shortlisted' | 'rejected';
+  status: 'shortlisted' | 'rejected';
 }
 
 export const mockJobDescription = {
@@ -35,6 +35,20 @@ export const mockJobDescription = {
     { skill: "Distributed Systems (Ray, Spark)", type: "Good-to-have", weight: 70 },
     { skill: "LLM Orchestration (LangChain, LlamaIndex)", type: "Good-to-have", weight: 80 },
     { skill: "MLOps (Kubernetes, MLflow)", type: "Optional", weight: 60 }
+  ]
+};
+
+export const mockDataScientistJob = {
+  title: "Data Scientist",
+  department: "Data Analytics",
+  location: "Remote / New York",
+  description: "We are seeking a Data Scientist to analyze complex datasets, build predictive models, and deliver actionable insights. You should be proficient in statistical analysis, machine learning algorithms, and data visualization tools.",
+  requirements: [
+    { skill: "Python or R", type: "Must-have", weight: 90 },
+    { skill: "SQL", type: "Must-have", weight: 85 },
+    { skill: "Machine Learning (Scikit-learn, XGBoost)", type: "Must-have", weight: 85 },
+    { skill: "Data Visualization (Tableau, PowerBI)", type: "Good-to-have", weight: 70 },
+    { skill: "Big Data (Hadoop, Spark)", type: "Optional", weight: 60 }
   ]
 };
 
@@ -71,7 +85,7 @@ export const mockCandidates: Candidate[] = [
     experience: "4 years as a Data Scientist at FinTech Corp. Designed predictive models using TensorFlow.",
     education: "Ph.D. Statistics, MIT",
     explainability: "Strong theoretical background and solid Python/TensorFlow skills provide a good foundation. The system inferred adjacent capability for complex ML architectures, though lacking direct distributed orchestration frameworks (Ray/Spark).",
-    status: "pending"
+    status: "rejected"
   },
   {
     id: "c3",
@@ -89,7 +103,7 @@ export const mockCandidates: Candidate[] = [
     education: "B.S. Computer Science, State University",
     explainability: "Match penalty due to lack of core Deep Learning frameworks (PyTorch/TensorFlow). While software engineering practices are strong, the specific AI engineering requirements are unmet.",
     counterfactual: "Adding a portfolio project utilizing PyTorch or contributing to LLM open source codebases (e.g., LangChain) would strongly elevate this profile for AI Engineering roles.",
-    status: "pending"
+    status: "rejected"
   },
   {
     id: "c4",
@@ -108,22 +122,21 @@ export const mockCandidates: Candidate[] = [
     explainability: "Excellent alignment with emerging 'Good-to-have' LLM Orchestration skills. Scoring boosts applied via adjacency graph: Prompt Engineering mapped to required LLM problem-solving competencies.",
     biasFlag: true,
     biasReason: "Model over-indexed on the word 'Enterprise' in previous job title. Adjusted experience weight to prevent large-company bias.",
-    status: "pending"
+    status: "rejected"
   }
 ];
 
 export const pipelineMetrics = {
   totalProcessed: 142,
   shortlisted: 12,
-  rejected: 45,
-  pendingReview: 85,
+  rejected: 130,
   biasAlerts: 3
 };
 
 export const mockAgentLogs = [
   { id: 1, timestamp: "10:45:12 AM", agent: "Orchestrator", message: "Received batch upload of 25 resumes. Distributing to Parser Agent.", level: "info" },
   { id: 2, timestamp: "10:45:15 AM", agent: "Parser Agent", message: "Successfully extracted text and structural data from 24/25 PDFs. 1 DOCX file corrupted.", level: "success" },
-  { id: 3, timestamp: "10:45:18 AM", agent: "Analyzer Agent", message: "Compiled job framework for 'Senior AI Engineer'. Weight parameters normalized.", level: "info" },
+  { id: 3, timestamp: "10:45:18 AM", agent: "Analyzer Agent", message: "Compiled job description for 'Senior AI Engineer'. Weight parameters normalized.", level: "info" },
   { id: 4, timestamp: "10:45:25 AM", agent: "Semantic Matcher", message: "Completed embeddings comparison for 24 profiles. 3 profiles scored > 85.", level: "success" },
   { id: 5, timestamp: "10:45:28 AM", agent: "Bias Monitor", message: "FLAGGED candidate 'Sam Chen' (Score: 89) for over-indexing on proxy attribute: 'Enterprise'.", level: "warning" },
   { id: 6, timestamp: "10:45:30 AM", agent: "Explainability Engine", message: "Generated 24 counterfactual insight reports and sub-score matrices.", level: "success" },

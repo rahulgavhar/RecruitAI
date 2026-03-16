@@ -1,0 +1,270 @@
+.agents-page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+.agents-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.agents-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.agents-header .subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Flowchart Layout */
+.agents-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+.flow-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+}
+
+.flow-row.single {
+  gap: 0;
+}
+
+.flow-row.split-row {
+  gap: 80px;
+}
+
+.flow-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Connectors */
+.flow-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60px;
+  position: relative;
+}
+
+.flow-line {
+  width: 2px;
+  height: calc(100% - 20px);
+  background: linear-gradient(to bottom, var(--accent-secondary), rgba(99, 102, 241, 0.2));
+}
+
+.flow-icon {
+  color: var(--accent-primary);
+  opacity: 0.8;
+}
+
+.flow-join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+.join-horizontal {
+  position: absolute;
+  top: 0;
+  width: calc(100% - 380px); /* Adjust based on flow-column width and gap */
+  height: 2px;
+  background: var(--accent-secondary);
+  opacity: 0.5;
+}
+
+.join-vertical {
+  width: 2px;
+  height: calc(100% - 20px);
+  background: linear-gradient(to bottom, var(--accent-secondary), rgba(99, 102, 241, 0.2));
+}
+
+.flow-split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.split-vertical {
+  width: 2px;
+  height: 30px;
+  background: var(--accent-secondary);
+  opacity: 0.5;
+}
+
+.split-horizontal {
+  width: calc(100% - 380px); /* Adjust based on gap and card width */
+  height: 2px;
+  background: var(--accent-secondary);
+  opacity: 0.5;
+  position: relative;
+}
+
+.split-arrows {
+  width: calc(100% - 380px);
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.split-arrows .left { transform: translateX(-50%); }
+.split-arrows .right { transform: translateX(50%); }
+
+/* Cards */
+.agent-card {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.core-card {
+  max-width: 480px;
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+  transform: scale(1.05);
+  z-index: 2;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.core-card:hover {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.25);
+}
+
+.core-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-gradient);
+}
+
+.agent-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.type-ingestion { background: rgba(56, 189, 248, 0.1); color: #38bdf8; }
+.type-cleansing { background: rgba(244, 63, 94, 0.1); color: #f43f5e; }
+.type-definition { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+.type-processing { background: rgba(249, 115, 22, 0.1); color: #f97316; }
+.type-core { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+.type-reporting { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.type-action { background: rgba(99, 102, 241, 0.1); color: #6366f1; }
+
+.agent-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agent-card-body {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.agent-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+}
+
+.status-dot.active {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+@media (max-width: 900px) {
+  .flow-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .flow-row.split-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .join-horizontal, .split-horizontal, .split-arrows {
+    display: none;
+  }
+  
+  .flow-join, .flow-split {
+    height: 60px;
+  }
+  
+  .flow-split .split-vertical {
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-secondary), rgba(99, 102, 241, 0.2));
+  }
+  
+  .core-card {
+    transform: scale(1);
+  }
+  
+  .core-card:hover {
+    transform: translateY(-5px);
+  }
+}
